@@ -1,0 +1,32 @@
+{
+  "name": "shoplist",
+  "version": "1.0.0",
+  "description": "Shopping list backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuriamichel/upb-shopping-list-backend.git"
+  },
+  "keywords": [
+    "shoppingList"
+  ],
+  "author": "shoppingListUPB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nuriamichel/upb-shopping-list-backend/issues"
+  },
+  "homepage": "https://github.com/nuriamichel/upb-shopping-list-backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6",
+    "morgan": "^1.10.0"
+  }
+}
