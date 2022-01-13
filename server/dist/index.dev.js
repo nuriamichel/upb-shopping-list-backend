@@ -17,11 +17,11 @@ var _require = require('./database'),
 app.set('port', process.env.PORT || 3000); //Middlewares
 
 app.use(morgan('dev'));
-app.use(express.json()); //app.use(cors({origin: 'http://localhost:4200'}))//TODO
-
+app.use(express.json());
 app.use(cors({
-  origin: 'http://skynet.lp.upb.edu/~shoplist/'
+  origin: 'http://localhost:4200/'
 })); //TODO
+//app.use(cors({origin: 'http://skynet.lp.upb.edu/~shoplist/'}))//TODO
 //Routes
 
 app.use('/', require('./routes/users.routes')); // '/otra ruta'

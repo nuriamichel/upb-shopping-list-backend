@@ -9,7 +9,7 @@ const {mongoose} = require('./database')
 
 
 // Settings
-app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 27017)
 
 //Middlewares
 app.use(morgan('dev'))
