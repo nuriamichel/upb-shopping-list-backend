@@ -6,10 +6,11 @@ const cors = require('cors');
 
 const {mongoose} = require('./database')
 
+const path = __dirname + '/app/views/';
 
 
 // Settings
-app.set('port', process.env.PORT || 4500)
+app.set('port', process.env.PORT)
 
 //Middlewares
 
@@ -21,7 +22,7 @@ app.use(cors({origin: 'https://skynet.lp.upb.edu/'}))//TODO
 //app.use(cors({origin: 'http://localhost:4500/'}))//TODO
 
 //Routes
-app.use('/~shoplist',require('./routes/users.routes'))// '/otra ruta'
+app.use('/~shoplist/db',require('./routes/users.routes'))// '/otra ruta'
 
 //Starting Server+
 app.listen(app.get('port'), () => {

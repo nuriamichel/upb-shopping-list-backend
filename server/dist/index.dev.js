@@ -14,7 +14,7 @@ var _require = require('./database'),
     mongoose = _require.mongoose; // Settings
 
 
-app.set('port', process.env.PORT || 3000); //Middlewares
+app.set('port', process.env.PORT ); //Middlewares
 
 app.use(morgan('dev'));
 app.use(express.json());

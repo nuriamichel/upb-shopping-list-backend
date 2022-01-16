@@ -4,6 +4,7 @@
   "description": "Shopping list backend",
   "main": "server/index.js",
   "scripts": {
+    "start":"node server/index.js",
     "dev": "nodemon server/index.js",
     "test":"echo \"this is a test\" && exit 1"
   },
