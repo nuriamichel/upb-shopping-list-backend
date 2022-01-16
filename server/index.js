@@ -10,7 +10,7 @@ const path = __dirname + '/app/views/';
 
 
 // Settings
-app.set('port', process.env.PORT || 4500)
+app.set('port', process.env.PORT || 80)
 
 //Middlewares
 
@@ -25,6 +25,6 @@ app.use(cors({origin: 'https://skynet.lp.upb.edu/'}))//TODO
 app.use('/~shoplist/db',require('./routes/users.routes'))// '/otra ruta'
 
 //Starting Server+
-app.listen(app.get('port'),'0.0.0.0', () => {
+app.listen(app.get('port'), () => {
  console.log("server OK " + app.get('port'));   
 })
