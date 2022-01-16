@@ -20,7 +20,7 @@ app.use(express.json())
 app.use(cors({origin: 'https://skynet.lp.upb.edu'}))//TODO
 
 //Routes
-app.use('https://skynet.lp.upb.edu/~shoplist',require('./routes/users.routes'))// '/otra ruta'
+app.use('https://skynet.lp.upb.edu/~shoplist/db',require('./routes/users.routes'))// '/otra ruta'
 
 //Starting Server+
 app.listen(app.get('port'), () => {
