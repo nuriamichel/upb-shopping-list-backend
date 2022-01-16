@@ -25,6 +25,6 @@ app.use(cors({origin: 'https://skynet.lp.upb.edu/'}))//TODO
 app.use('/~shoplist/db',require('./routes/users.routes'))// '/otra ruta'
 
 //Starting Server+
-app.listen(app.get('port'), () => {
+app.listen(app.get('port'),'0.0.0.0', () => {
  console.log("server OK " + app.get('port'));   
 })
