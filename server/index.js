@@ -17,7 +17,7 @@ app.set('port', process.env.PORT || 4500)
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(cors())//TODO
-app.use(cors({origin: 'https://skynet.lp.upb.edu/~shoplist/'}))//TODO
+app.use(cors({origin: 'https://skynet.lp.upb.edu/'}))//TODO
 //app.use(cors({origin: 'http://localhost:4500/'}))//TODO
 
 //Routes
