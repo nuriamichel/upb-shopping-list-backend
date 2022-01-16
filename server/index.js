@@ -9,7 +9,7 @@ const {mongoose} = require('./database')
 
 
 // Settings
-app.set('port', process.env.PORT || 10000)
+app.set('port', process.env.PORT || 9094)
 
 //Middlewares
 
@@ -24,6 +24,6 @@ app.use(cors({origin: 'https://skynet.lp.upb.edu/'}))//TODO
 app.use('/~shoplist',require('./routes/users.routes'))// '/otra ruta'
 
 //Starting Server+
-app.listen(app.get('port'),'0.0.0.0', () => {
+app.listen(app.get('port'), () => {
  console.log("server OK " + app.get('port'));   
 })
