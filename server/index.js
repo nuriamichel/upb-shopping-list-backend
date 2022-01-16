@@ -23,6 +23,6 @@ app.use(cors())//TODO
 app.use('/~shoplist',require('./routes/users.routes'))// '/otra ruta'
 
 //Starting Server+
-app.listen(app.get('port','186.121.251.3'), () => {
+app.listen(app.get('port','186.121.251.3', () => {
  console.log("server OK " + app.get('port'));   
-})
+}))
