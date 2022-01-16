@@ -10,7 +10,7 @@ const path = __dirname + '/app/views/';
 
 
 // Settings
-app.set('port', process.env.PORT || 8080)
+app.set('port', process.env.PORT || 4500)
 
 //Middlewares
 
