@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 app.use(morgan('dev'))
 app.use(express.json())
 //app.use(cors({origin: 'http://localhost:4200'}))//TODO
-app.use(cors({origin: 'https://skynet.lp.upb.edu'}))//TODO
+//app.use(cors({origin: 'https://skynet.lp.upb.edu'}))//TODO
 
 //Routes
 app.use('/',require('./routes/users.routes'))// '/otra ruta'
