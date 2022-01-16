@@ -16,11 +16,11 @@ app.set('port', process.env.PORT || 4500)
 
 app.use(morgan('dev'))
 app.use(express.json())
-app.use(cors({origin: 'http://localhost:4500'}))//TODO
-//app.use(cors({origin: 'https://skynet.lp.upb.edu/~shoplist/'}))//TODO
+//app.use(cors({origin: 'http://localhost:4500'}))//TODO
+app.use(cors({origin: 'https://skynet.lp.upb.edu/~shoplist/'}))//TODO
 
 //Routes
-app.use('/',require('./routes/users.routes'))// '/otra ruta'
+app.use('http://skynet.lp.upb.edu/~shoplist/db',require('./routes/users.routes'))// '/otra ruta'
 
 //Starting Server+
 app.listen(app.get('port'), () => {
