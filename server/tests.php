@@ -5,7 +5,7 @@
         $m = new MongoDB\Driver\Manager('mongodb://shoplist:dti2022@localhost:27017/shoplist');
         echo "Connection to database successfully";
         // display the content of the driver, for diagnosis purpose
-        $insertOneResult = $collection->insertOne([
+        $insertOneResult = $m->insertOne([
             'username' => 'admin',
             'email' => 'admin@example.com',
             'name' => 'Admin User',
