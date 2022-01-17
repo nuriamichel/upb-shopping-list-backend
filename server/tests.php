@@ -1,8 +1,15 @@
 <?php
-require 'vendor/autoload.php'; // incluir lo bueno de Composer
-$cliente = new MongoDB\Client("mongodb://shoplist:dti2022@localhost:27017");
-$c = $cliente->shoplist->users;
-$resultado = $c->find();
-echo 'hola'
+require 'vendor/autoload.php'; // include Composer goodies
+
+use MongoDB\Client as Mongo;
+
+$user = "shoplist";
+$pwd = 'dti2022';
+
+$mongo = new Mongo("mongodb://${user}:${pwd}@127.0.0.1:27017");
+$collection = $mongo->shoplist->users;
+$result = $collection->find()->toArray();
+
+print_r($result);
 
 ?>
