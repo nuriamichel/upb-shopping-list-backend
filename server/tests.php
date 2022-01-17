@@ -5,7 +5,13 @@
         $m = new MongoDB\Driver\Manager('mongodb://shoplist:dti2022@localhost:27017/shoplist');
         echo "Connection to database successfully";
         // display the content of the driver, for diagnosis purpose
-        var_dump($m);
+        $insertOneResult = $collection->insertOne([
+            'username' => 'admin',
+            'email' => 'admin@example.com',
+            'name' => 'Admin User',
+        ]);
+        printf("Inserted %d document(s)\n", $insertOneResult->getInsertedCount());
+
     }
     catch (Throwable $e) {
         // catch throwables when the connection is not a success
