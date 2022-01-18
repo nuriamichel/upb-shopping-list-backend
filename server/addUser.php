@@ -17,7 +17,7 @@ if (!$jsonUser) {
 }
 
 $sql = "INSERT INTO users (id, email, photo, firstname) VALUES ('".$jsonUser->id."','".$jsonUser->email."' ,'".$jsonUser->photo."','".$jsonUser->firstname."')";
-$result = $mysqli->query($sql);
+$result = $conn->query($sql);
 echo json_encode([
     "resultado" => $result,
 
