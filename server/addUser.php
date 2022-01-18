@@ -20,7 +20,9 @@ $sql = "INSERT INTO users (id, email, photo, firstname) VALUES ('".$jsonUser->id
 $result = $conn->query($sql);
 echo json_encode([
     "resultado" => $result,
-    "json" => $jsonUser,
-
 ]);
+
+echo json_encode($jsonUser);
+echo "$jsonUser";
+
 ?>
