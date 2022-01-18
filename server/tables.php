@@ -10,8 +10,7 @@ if($link === false){
  
 // Attempt create table query execution
 $sql = "CREATE TABLE IF NOT EXISTS users(
-    id INT NOT NULL PRIMARY KEY,
-    email VARCHAR(70) NOT NULL,
+    email VARCHAR(70) NOT NULL PRIMARY KEY,
     photo VARCHAR(70),
     firstname VARCHAR(70)
 )";

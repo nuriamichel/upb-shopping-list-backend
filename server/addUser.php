@@ -26,10 +26,9 @@ $request = json_decode($postdata);
 $email = $request->{'email'};
 $photo = $request->{'photo'};
 $firstname = $request->{'firstname'};
-$id = $request->{'id'};
 
-$sql = "INSERT INTO users (id, email, photo, firstname)
-VALUES ('$id','$email', '$photo', '$firstname')";
+$sql = "INSERT INTO users ( email, photo, firstname)
+VALUES ('$email', '$photo', '$firstname')";
 
 if ($conn->query($sql) === TRUE) {
   echo json_encode("New record created successfully");
