@@ -15,10 +15,11 @@ $jsonUser = json_decode(file_get_contents("php://input"));
 if (!$jsonUser) {
     exit("No hay datos");
 }
-$sentencia = $conn->prepare("insert into users(id, email, photo, firstname) values (?,?,?,?)");
-$resultado = $sentencia->execute([$jsonUser->id, $jsonUser->email, $jsonUser->photo,$jsonUser->firstname ]);
+
+$sql = "INSERT INTO users (id, email, photo, firstname) VALUES ('".$jsonUser->id."','".$jsonUser->email."' ,'".$jsonUser->photo."','".$jsonUser->firstname."')";
+$result = $mysqli->query($sql);
 echo json_encode([
-    "resultado" => $resultado,
+    "resultado" => $result,
 
 ]);
 ?>
