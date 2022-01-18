@@ -6,9 +6,9 @@ $request = json_decode($postdata);
 if(isset($postdata) && !empty($postdata))
 {
   $id = mysqli_real_escape_string($mysqli, (int)($request->id));
-  $email = mysqli_real_escape_string($mysqli, (int)$request->email);
+  $email = mysqli_real_escape_string($mysqli, trim($request->email);
    $photo = mysqli_real_escape_string($mysqli, trim($request->photo));
-  $firstname = mysqli_real_escape_string($mysqli, (int)$request->firstname);
+  $firstname = mysqli_real_escape_string($mysqli, trim($request->firstname);
   $sql = "INSERT INTO users(id,email,photo,firstname) VALUES ('{$id}','{$email}','{$photo}','{$firstname}')";
  // echo $sql;
 if ($mysqli->query($sql) === TRUE) {
