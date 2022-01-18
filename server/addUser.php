@@ -21,13 +21,17 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 
 
-echo $request->{'email'};
+//echo json_encode($request->{'email'});
 
 
 $sql = "INSERT INTO users (id, email, photo, firstname) 
-VALUES (3,'sss', 'FinalTest', 'john@TEST.com')";
+VALUES (3,'$request->{'email'}', 'FinalTest', 'john@TEST.com')";
 
-
+if ($conn->query($sql) === TRUE) {
+  echo json_encode("New record created successfully");
+} else {
+  echo json_encode("Error: " . $sql . "<br>" . $conn->error);
+}
 
 $conn->close();
 
