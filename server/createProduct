@@ -1,0 +1,24 @@
+<?php
+$servername = "localhost";
+$username = "shoplist";
+$password = "Shopping123HELP";
+$dbname = "shoplist";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$jsonProducto = json_decode(file_get_contents("php://input"));
+if (!$jsonProducto) {
+    exit("No hay datos");
+}
+$bd = include_once "bd.php";
+$sentencia = $bd->prepare("insert into mascotas(nombre, raza, edad) values (?,?,?)");
+$resultado = $sentencia->execute([$jsonProducto->nombre, $jsonProducto->raza, $jsonProducto->edad]);
+echo json_encode([
+    "resultado" => $resultado,
+]);
+?>
