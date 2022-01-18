@@ -5,22 +5,12 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 if(isset($postdata) && !empty($postdata))
 {
-  $id = mysqli_real_escape_string($mysqli, (int)($request->id));
-  $email = mysqli_real_escape_string($mysqli, trim($request->email);
-   $photo = mysqli_real_escape_string($mysqli, trim($request->photo));
-  $firstname = mysqli_real_escape_string($mysqli, trim($request->firstname);
-  $sql = "INSERT INTO users(id,email,photo,firstname) VALUES ('{$id}','{$email}','{$photo}','{$firstname}')";
+  $sql = "INSERT INTO users(id,email,photo,firstname) VALUES ('{$request->id}','{$request->email}','{$request->photo}','{$request->firstname}')";
  // echo $sql;
 if ($mysqli->query($sql) === TRUE) {
  
  
-    $authdata = [
-      'id' => $id,
-	  'email' => $email,
-	  'photo' => $photo,
-      'firstname' => $firstname,
-    ];
-    echo json_encode($authdata);
+    echo json_encode("todo" => "OK",);
  
 }
 }
