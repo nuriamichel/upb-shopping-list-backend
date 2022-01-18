@@ -16,7 +16,7 @@ if (!$jsonUser) {
     exit("No hay datos");
 }
 
-$sentencia = $conn->"INSERT INTO users(id, email, photo,firstname) VALUES ([$jsonMascota->id, $jsonMascota->email, $jsonMascota->photo, $jsonMascota->firstname])";
+$sentencia = $conn->"INSERT INTO users(id, email, photo,firstname) VALUES ($jsonMascota->id, $jsonMascota->email, $jsonMascota->photo, $jsonMascota->firstname)";
 echo json_encode([
     "resultado" => $resultado,
 ]);
