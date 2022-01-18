@@ -1,18 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "shoplist";
-$password = "Shopping123HELP";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password,"shoplist");
-
-// Check connection
-function retornarConexion() {
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+$contraseña = "Shopping123HELP";
+$usuario = "shoplist";
+$nombre_base_de_datos = "shoplist";
+try {
+    return new PDO('mysql:host=localhost;dbname=' . $nombre_base_de_datos, $usuario, $contraseña);
+} catch (Exception $e) {
+    echo "Ocurrió algo con la base de datos: " . $e->getMessage();
 }
-$vec = "Connected successfully";
-$cad=json_encode($vec);
-echo $cad;}
 ?>
