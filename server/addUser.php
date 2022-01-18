@@ -16,7 +16,7 @@ if (!$jsonUser) {
     exit("No hay datos");
 }
 $sql = "INSERT INTO users (id, email, photo, firstname) 
-VALUES ('".$jsonUser->_id."','".$jsonUser->email
+VALUES ('".$jsonUser->id."','".$jsonUser->email
 . "','".$jsonUser->photo. "','".$jsonUser->firstname."')";
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
