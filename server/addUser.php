@@ -31,7 +31,7 @@ $sql = "INSERT INTO users ( email, photo, firstname)
 VALUES ('$email', '$photo', '$firstname')";
 
 if ($conn->query($sql) === TRUE) {
-  echo json_encode("New record created successfully");
+  echo json_encode(1);
 } else {
   echo json_encode("Error: " . $sql . "<br>" . $conn->error);
 }
