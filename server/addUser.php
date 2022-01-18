@@ -16,9 +16,11 @@ if (!$jsonUser) {
     exit("No hay datos");
 }
 
-$sentencia = $conn->"INSERT INTO users(id, email, photo,firstname) VALUES (0,'','','')";
+$sql ="INSERT INTO users(id, email, photo, firstname) VALUES (0,'','','')";
+
+$conn->query($sql)
 echo json_encode([
-    "resultado" => $resultado,
+    "resultado" => $conn,
 ]);
 
 ?>
