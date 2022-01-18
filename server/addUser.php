@@ -24,11 +24,12 @@ $request = json_decode($postdata);
 
 //echo json_encode($request->{'email'});
 $email = $request->{'email'};
-$email = $request->{'photo'};
-$email = $request->{'firstname'};
+$photo = $request->{'photo'};
+$firstname = $request->{'firstname'};
+$id = $request->{'id'};
 
 $sql = "INSERT INTO users (id, email, photo, firstname)
-VALUES (7,'$email', '$photo', '$firstname')";
+VALUES ('$id','$email', '$photo', '$firstname')";
 
 if ($conn->query($sql) === TRUE) {
   echo json_encode("New record created successfully");
