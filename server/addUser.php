@@ -20,7 +20,7 @@ $sentencia = $conn->prepare("insert into users(id, email, photo, firstname) valu
 $resultado = $sentencia->execute([$jsonUser->_id, $jsonUser->email, $jsonUser->photo, $jsonUser->firstname]);
 echo json_encode([
     "resultado" => $resultado,
-    "llego" => $jsonUser,
+    "llego" => $jsonUser->_id,
 
 ]);
 ?>
