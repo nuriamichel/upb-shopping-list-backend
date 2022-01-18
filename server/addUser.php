@@ -24,8 +24,8 @@ $request = json_decode($postdata);
 //echo $request->{'id'};
 
 
-$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('Final test', 'FinalTest', 'john@TEST.com')";
+$sql = "INSERT INTO users (id, email, photo, firstname)
+VALUES (2, 'Final test', 'FinalTest', 'john@TEST.com')";
 
 if ($conn->query($sql) === TRUE) {
   echo json_encode("New record created successfully");
