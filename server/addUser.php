@@ -7,7 +7,7 @@ $request = json_decode($postdata);
 
 echo $request->{'id'};
 
-$sql = "INSERT INTO `users`(`id`,`email`,`photo`,`firstname`) VALUES (2,'test', 'test', 'jtest.com')";
+$sql = "INSERT INTO users (id,email,photo,firstname) VALUES (2,'test', 'test', 'jtest.com')";
 if ($bd->query($sql) === TRUE) {
   echo "New record created successfully";
 } else {
