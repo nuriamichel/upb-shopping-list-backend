@@ -16,13 +16,10 @@ if (!$jsonUser) {
     exit("No hay datos");
 }
 
-$sql = "INSERT INTO users (id, email, photo, firstname) VALUES ('".$jsonUser->id."','".$jsonUser->email."' ,'".$jsonUser->photo."','".$jsonUser->firstname."')";
-$result = $conn->query($sql);
+$sentencia = $conn->prepare("insert into users(id, email, photo,firstname) values (?,?,?,?)");
+$resultado = $sentencia->execute([$jsonMascota->id, $jsonMascota->email, $jsonMascota->photo, $jsonMascota->firstname]);
 echo json_encode([
-    "resultado" => $result,
+    "resultado" => $resultado,
 ]);
-
-echo json_encode($jsonUser);
-echo "$jsonUser";
 
 ?>
