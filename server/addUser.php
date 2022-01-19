@@ -34,7 +34,7 @@ $sql = "INSERT INTO users ( email, photo, firstname)
 VALUES ('$email', '$photo', '$firstname')";
 
 if ($conn->query($sql) === TRUE) {
-  $sqlist = "INSERT INTO users ( email, lista, principal, share)
+  $sqlist = "INSERT INTO listas ( email, lista, principal, share)
 VALUES ('$email','Lista de compras',  '$principal', '$share')";
 if ($conn->query($sqlist) === TRUE) {
   echo json_encode("New record created successfully");
