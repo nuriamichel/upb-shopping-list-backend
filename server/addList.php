@@ -28,8 +28,8 @@ $email = $request->{'email'};
 $principal = $request->{'principal'};
 $share = $request->{'share'};
 
-$sql = "INSERT INTO users ( nameList, email, principal, share)
-VALUES ('$nameList', '$email', '$principal', '$share')";
+$sql = "INSERT INTO listas ( email, lista, principal, share)
+VALUES ('$email', '$nameList', '$principal', '$share')";
 
 if ($conn->query($sql) === TRUE) {
   echo json_encode("New record created successfully");
