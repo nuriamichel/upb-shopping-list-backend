@@ -27,12 +27,20 @@ $email = $request->{'email'};
 $photo = $request->{'photo'};
 $firstname = $request->{'firstname'};
 
+$principal = TRUE;
+$share = FALSE;
+
 $sql = "INSERT INTO users ( email, photo, firstname)
 VALUES ('$email', '$photo', '$firstname')";
 
 if ($conn->query($sql) === TRUE) {
-  echo json_encode(TRUE);
+  $sqlist = "INSERT INTO users ( nameList, email, principal, share)
+VALUES ('Lista de compras', '$email', '$principal', '$share')";
+if ($conn->query($sqlist) === TRUE) {
+  echo json_encode("New record created successfully");
 } else {
+  echo json_encode("Error: " . $sql . "<br>" . $conn->error);
+}} else {
   echo json_encode("Error: " . $sql . "<br>" . $conn->error);
 }
 
