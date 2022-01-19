@@ -23,20 +23,7 @@ $request = json_decode($postdata);
 echo json_encode("lista");
 
 
-//echo json_encode($request->{'email'});
-$nameList = $request->{'nameList'};
-$email = $request->{'email'};
-$principal = $request->{'principal'};
-$share = $request->{'share'};
 
-$sql = "INSERT INTO listas ( email, lista, principal, share)
-VALUES ('$email', '$nameList', '$principal', '$share')";
-
-if ($conn->query($sql) === TRUE) {
-  echo json_encode("New record created successfully");
-} else {
-  echo json_encode("Error: " . $sql . "<br>" . $conn->error);
-}
 
 
 
