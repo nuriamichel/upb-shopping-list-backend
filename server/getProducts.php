@@ -29,7 +29,7 @@ while($row = $result->fetch_assoc()){
  
 $data['data'] = $json;
 $result =  mysqli_query($mysqli,$sql);
-echo json_encode($data);
+echo json_encode($json);
 
 $conn->close();
 
