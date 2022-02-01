@@ -28,16 +28,20 @@ while($row = $resultlist->fetch_assoc()){
   $jsonlist = $row;
 }
 
-//$sql = "SELECT * FROM productos WHERE lista_id = 7 and buyed = 0"; 
-//$result = $conn->query($sql);
+$idreq = json_decode($jsonlist);
+$id = $request->{'id'};
+
+
+$sql = "SELECT * FROM productos WHERE lista_id = '$id' and buyed = 0"; 
+$result = $conn->query($sql);
  
-//while($row = $result->fetch_assoc()){
-//     $json[] = $row;
-//}
+while($row = $result->fetch_assoc()){
+     $json[] = $row;
+}
  
-//$data['data'] = $json;
-//$result =  mysqli_query($mysqli,$sql);
-echo json_encode($jsonlist);
+$data['data'] = $json;
+$result =  mysqli_query($mysqli,$sql);
+echo json_encode($json);
 
 $conn->close();
 
