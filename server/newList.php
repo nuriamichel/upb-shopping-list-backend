@@ -20,8 +20,8 @@ if ($conn->connect_error) {
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 
-$email = $request->{'email'};
-$lista = $request->{'name'};
+$email = $_GET['email'];
+$lista = $_GET['name'];
 $principal = FALSE;
 $share = FALSE;
 
