@@ -41,7 +41,7 @@ while($row = $result->fetch_assoc()){
  
 $data['data'] = $json;
 $result =  mysqli_query($mysqli,$sql);
-echo json_encode($jsonlist->{'id'});
+echo json_encode($jsonlist[0]);
 
 $conn->close();
 
