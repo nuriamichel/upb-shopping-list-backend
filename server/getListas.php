@@ -31,7 +31,7 @@ $email = $_GET['email'];
 
 
 
-$sql = "SELECT * FROM listas WHERE principal = 0 AND email = '$email' AND shared = 0"; 
+$sql = "SELECT * FROM listas WHERE principal = 0 AND email = '$email'"; 
 $result = $conn->query($sql);
  
 while($row = $result->fetch_assoc()){
