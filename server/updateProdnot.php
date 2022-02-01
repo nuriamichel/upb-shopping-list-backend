@@ -17,8 +17,9 @@ if ($conn->connect_error) {
 }
 
 $id = $_GET['prodid'];
+$fff = FALSE;
 
-$sql = "UPDATE productos SET buyed=0 WHERE id='$id'";
+$sql = "UPDATE productos SET buyed='$fff' WHERE id='$id'";
 
 if ($conn->query($sql) === TRUE) {
 } else {
