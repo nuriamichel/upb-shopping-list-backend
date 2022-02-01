@@ -25,7 +25,7 @@ $sqllist = "SELECT id FROM listas WHERE email = '$email' and lista = '$lista'";
 $resultlist = $conn->query($sql);
 
 while($row = $resultlist->fetch_assoc()){
-  $jsonlist = $row;
+  $jsonlist[] = $row;
 }
 
 //$sql = "SELECT * FROM productos WHERE lista_id = 7 and buyed = 0"; 
