@@ -32,7 +32,7 @@ $fff = FALSE;
 
 
 
-$sql = "SELECT * FROM listas WHERE principal = '$fff'  AND email = '$email' AND shared = '$fff'"; 
+$sql = "SELECT * FROM listas WHERE principal = '$fff'  AND email = '$email'"; 
 $result = $conn->query($sql);
  
 while($row = $result->fetch_assoc()){
