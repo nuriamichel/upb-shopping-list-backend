@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 
-$listaid = $request->{'email'};
+$listaid = $_GET['email'];
 
 echo json_encode($listaid);
 
