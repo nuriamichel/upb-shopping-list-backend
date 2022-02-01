@@ -22,7 +22,7 @@ $email = $_GET['email'];
 $lista = $_GET['lista'];
 
 $sqllist = "SELECT id FROM listas WHERE email = '$email' and lista = '$lista'"; 
-$resultlist = $conn->query($sql);
+$resultlist = $conn->query($sqllist);
 
 while($row = $resultlist->fetch_assoc()){
   $jsonlist = $row;
