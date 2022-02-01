@@ -29,7 +29,7 @@ while($row = $resultlist->fetch_assoc()){
 }
 
 $idreq = json_decode($jsonlist);
-$id = $request->{'id'};
+$id = $idreq->{'id'};
 
 
 $sql = "SELECT * FROM productos WHERE lista_id = '$id' and buyed = 0"; 
