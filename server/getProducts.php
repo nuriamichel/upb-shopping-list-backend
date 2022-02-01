@@ -37,7 +37,7 @@ $lista = $_GET['lista'];
  
 //$data['data'] = $json;
 //$result =  mysqli_query($mysqli,$sql);
-echo json_encode($email);
+echo json_encode($lista);
 
 $conn->close();
 
