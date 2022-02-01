@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 $id = $_GET['prodid'];
 
 // sql to delete a record
-$sql = "DELETE FROM MyGuests WHERE id='$id'";
+$sql = "DELETE FROM productos WHERE id='$id'";
 
 if ($conn->query($sql) === TRUE) {
   echo "Record deleted successfully";
