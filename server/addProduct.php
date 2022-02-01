@@ -22,8 +22,8 @@ $request = json_decode($postdata);
 
 $listaid = $request->{'listaid'};
 $producto = $request->{'producto'};
-$buyed = $request->{'listaid'};
-$precio = $request->{'producto'};
+$buyed = $request->{'buyed'};
+$precio = $request->{'precio'};
 
 $sql = "INSERT INTO productos ( lista_id, producto, buyed, precio)
 VALUES ('$listaid', '$producto', '$buyed', '$precio')";
