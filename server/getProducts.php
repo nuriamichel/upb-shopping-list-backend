@@ -16,31 +16,16 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-
-$postdata = file_get_contents("php://input");
-$request = json_decode($postdata);
-
-$listaid = $request->{'listaid'};
-
-$products = [];
-$sql = "SELECT producto, precio FROM productos WHERE lista_id = 7 AND buyed =0";
+$sql = "SELECT * FROM productos"; 
 $result = $conn->query($sql);
-
-if($result)
-{
-  $i = 0;
-  while($row = mysqli_fetch_assoc($result))
-  {
-    $products[$i]['producto']    = $row['producto'];
-    $products[$i]['precio'] = $row['precio'];
-    $i++;
-  }
-
-  echo json_encode($products);
-} 
-
-
-
+ 
+while($row = $result->fetch_assoc()){
+     $json[] = $row;
+}
+ 
+$data['data'] = $json;
+$result =  mysqli_query($mysqli,$sql);
+echo json_encode($data);
 
 $conn->close();
 
