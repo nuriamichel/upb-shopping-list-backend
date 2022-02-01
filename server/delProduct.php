@@ -16,7 +16,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$id = $_GET['id'];
+$id = $_GET['prodid'];
 
 // sql to delete a record
 $sql = "DELETE FROM MyGuests WHERE id='$id'";
