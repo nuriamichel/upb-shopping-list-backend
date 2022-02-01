@@ -28,9 +28,10 @@ while($row = $resultlist->fetch_assoc()){
   $jsonlist = $row;
 }
 
+$id = array_values($jsonlist)[0];
 
 
-echo json_encode($jsonlist);
+echo json_encode($id);
 
 $conn->close();
 
