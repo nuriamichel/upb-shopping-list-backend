@@ -36,7 +36,9 @@ if(mysqli_query($link, $sql)){
 $sql = "CREATE TABLE IF NOT EXISTS productos(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     lista_id VARCHAR(70) NOT NULL,
-    producto VARCHAR(70) 
+    producto VARCHAR(70) NOT NULL,
+    buyed boolean not null default 0,
+    precio INT default 0
 )";
 if(mysqli_query($link, $sql)){
     echo "Table created successfully. ";

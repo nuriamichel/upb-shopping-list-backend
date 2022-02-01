@@ -22,9 +22,11 @@ $request = json_decode($postdata);
 
 $listaid = $request->{'listaid'};
 $producto = $request->{'producto'};
+$buyed = $request->{'listaid'};
+$precio = $request->{'producto'};
 
-$sql = "INSERT INTO productos ( lista_id, producto)
-VALUES ('$listaid', '$producto')";
+$sql = "INSERT INTO productos ( lista_id, producto, buyed, precio)
+VALUES ('$listaid', '$producto', '$buyed', '$precio')";
 
 if ($conn->query($sql) === TRUE) {
   echo json_encode("New record created successfully");
