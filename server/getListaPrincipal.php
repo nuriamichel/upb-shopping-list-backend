@@ -35,7 +35,7 @@ $sql = "SELECT * FROM listas WHERE principal = 1 AND email = '$email';
 $result = $conn->query($sql);
  
 while($row = $result->fetch_assoc()){
-     $json[] = $row;
+     $json = $row;
 }
  
 $data['data'] = $json;
