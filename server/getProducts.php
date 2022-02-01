@@ -32,7 +32,7 @@ $idreq = json_decode($jsonlist);
 $id = $idreq->{'id'};
 
 
-$sql = "SELECT * FROM productos WHERE lista_id = '$jsonlist' and buyed = 0"; 
+$sql = "SELECT * FROM productos WHERE lista_id = '$jsonlist[0]}' and buyed = 0"; 
 $result = $conn->query($sql);
  
 while($row = $result->fetch_assoc()){
@@ -41,7 +41,7 @@ while($row = $result->fetch_assoc()){
  
 $data['data'] = $json;
 //$result =  mysqli_query($mysqli,$sql);
-echo json_encode($json);
+echo json_encode(array_values($jsonlist)[0]);
 
 $conn->close();
 
