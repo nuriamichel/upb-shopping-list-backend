@@ -21,12 +21,12 @@ $request = json_decode($postdata);
 $email = $_GET['email'];
 $lista = $_GET['lista'];
 
-$sqllist = "SELECT id FROM listas WHERE email = '$email' and lista = '$lista'"; 
-$resultlist = $conn->query($sql);
+//$sqllist = "SELECT id FROM listas WHERE email = '$email' and lista = '$lista'"; 
+//$resultlist = $conn->query($sql);
 
-while($row = $resultlist->fetch_assoc()){
-  $jsonlist[] = $row;
-}
+//while($row = $resultlist->fetch_assoc()){
+//  $jsonlist[] = $row;
+//}
 
 //$sql = "SELECT * FROM productos WHERE lista_id = 7 and buyed = 0"; 
 //$result = $conn->query($sql);
@@ -37,7 +37,7 @@ while($row = $resultlist->fetch_assoc()){
  
 //$data['data'] = $json;
 //$result =  mysqli_query($mysqli,$sql);
-echo json_encode($jsonlist);
+echo json_encode($email);
 
 $conn->close();
 
