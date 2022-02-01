@@ -28,10 +28,11 @@ while($row = $resultlist->fetch_assoc()){
   $jsonlist = $row;
 }
 $email = $_GET['email'];
+$fff = FALSE;
 
 
 
-$sql = "SELECT * FROM listas WHERE principal = 0 AND email = '$email'"; 
+$sql = "SELECT * FROM listas WHERE principal = '$fff'  AND email = '$email' AND shared = '$fff'"; 
 $result = $conn->query($sql);
  
 while($row = $result->fetch_assoc()){
